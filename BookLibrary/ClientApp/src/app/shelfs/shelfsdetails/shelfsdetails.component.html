@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row" *ngIf="books$ | async as books; else loading">
+    <ng-container *ngIf="books.length > 0; else emptyMessage">
+    <ng-container *ngFor="let book of books$ | async; let i = index">
+
+      <div class="col-4">
+        <app-deletebook [value]="book.bookUuid"></app-deletebook>
+        <app-delete-from-shelf [bookValue]="book.bookUuid" [shelfValue]="shelfGuid"></app-delete-from-shelf>
+        <a [routerLink]="['/updatebook', book.bookUuid]" class="btn btn-primary">Edytuj</a>
+        <div class="card" [routerLink]="['/book', book.bookUuid]" style="width: 18rem; background-color: #DAFDBA; margin-bottom: 20px;">
+          <div class="card-image">
+            <img [src]="book.imageUrl"  alt="Book Image" width = "150px" height="450px" class="card-img-top">
+          </div>
+          <div class="card-body">
+            <p>Book ID: {{ book.book_id }}</p>
+            <h5 class="card-title">Book Title: {{ book.title }}</h5>
+            <p class="card-text">Book Rating: {{ book.rating }}</p>
+            <p class="card-text">Book Description: {{ book.description }}</p>
+            <a [routerLink]="['/books', book.bookUuid]" class="btn btn-primary">Więcej</a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    </ng-container>
+  </div>
+</div>
+<ng-template #loading>
+ <div class="loading-container">
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
+</ng-template>
+<ng-template #emptyMessage>
+  <p>Brak dostępnych książek na półce.</p>
+</ng-template>

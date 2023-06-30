@@ -1,0 +1,25 @@
+<div>
+  <a [routerLink]="['/addauthor']" class="btn btn-primary">Dodaj Autora</a>
+</div>
+  <h2>Lista Autorów</h2>
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let author of authors">
+        <div class="col-4">
+          <app-deleteauthor [value]="author.authorUuid"></app-deleteauthor>
+          <a [routerLink]="['/updateauthor', author.authorUuid]" class="btn btn-primary">Edytuj</a>
+          <div class="card" [routerLink]="['/author', author.authorUuid]" style="width: 18rem; background-color: #DAFDBA; margin-bottom: 20px;">
+            <div class="card-image">
+              <img [src]="author.imageUrl" alt="Author Image" width="150px" height="450px" class="card-img-top">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{ author.firstName }} {{ author.lastName }}</h5>
+              <p class="card-text">Date of Birth: {{ author.birthDate }}</p>
+              <p class="card-text">Description: {{ author.description }}</p>
+              <a [routerLink]="['/author', author.authorUuid]" class="btn btn-primary">Więcej</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>

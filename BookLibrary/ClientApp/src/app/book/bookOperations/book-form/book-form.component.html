@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+<h1>Dodaj Nową Książkę</h1>
+<form (ngSubmit)="addBook()" #bookForm="ngForm">
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required [(ngModel)]="newBook.title">
+  </div>
+
+  <div>
+    <label for="totalPages">Total Pages:</label>
+    <input type="number"   class="custom-input"id="totalPages" name="totalPages" required [(ngModel)]="newBook.totalPages">
+  </div>
+
+  <div>
+    <label for="rating">Rating:</label>
+    <input type="number"  class="custom-input" id="rating" name="rating" required [(ngModel)]="newBook.rating">
+  </div>
+
+  <div>
+    <label for="isbn">ISBN:</label>
+    <input type="text" id="isbn" name="isbn" [(ngModel)]="newBook.isbn">
+  </div>
+
+  <div>
+    <label for="publishedDate">Published Date:</label>
+    <input required type="date" id="publishedDate" name="publishedDate" required [(ngModel)]="newBook.publishedDate">
+  </div>
+
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" [(ngModel)]="newBook.description"></textarea>
+  </div>
+
+  <div>
+    <label for="imageUrl">Image URL:</label>
+    <input type="text" id="imageUrl" name="imageUrl" [(ngModel)]="newBook.imageUrl">
+  </div>
+  <button type="submit">Add Book</button>
+</form>

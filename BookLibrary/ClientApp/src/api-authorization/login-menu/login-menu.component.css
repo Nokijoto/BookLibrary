@@ -1,0 +1,20 @@
+.nav-link-text {
+    text-shadow: 1px 1px 1px #FFC0CB, -1px -1px 1px #FFC0CB, 1px -1px 1px #00FFFF, -1px 1px 1px #00FFFF;
+    font-size: larger;
+    font-weight: bold;
+    transition: font-size 0.3s ease;
+  }
+
+  .nav-link-text:hover {
+    font-size: x-large;
+  }
+
+  .nav-item {
+    /* display: inline-block;
+    text-align: center; */
+    margin: 0 10px;
+  }
+
+  .nav-link-text {
+    text-decoration: none;
+  }

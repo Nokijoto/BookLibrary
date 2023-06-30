@@ -1,0 +1,20 @@
+<div>
+  <a [routerLink]="['/addshelf']" class="btn btn-primary">Dodaj Półke</a>
+</div>
+<h2>Lista Półek</h2>
+<link rel="stylesheet" href="shelf.component.css">
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let shelf of shelfs$ | async; let i = index">
+      <div class="col-4">
+        <app-deleteshelf [value]="shelf.shelfUuid"></app-deleteshelf>
+        <div class="card" [routerLink]="['/shelf', shelf.shelfUuid]" style="width: 18rem; background-color: #DAFDBA; margin-bottom: 20px;">
+          <div class="card-body">
+            <p>{{ shelf.shelfName }}</p>
+            <a [routerLink]="['/shelf', shelf.shelfUuid]" class="btn btn-primary">Więcej</a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

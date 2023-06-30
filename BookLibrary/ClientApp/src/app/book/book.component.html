@@ -1,0 +1,27 @@
+<div>
+  <a [routerLink]="['/addbook']" class="btn btn-primary">Dodaj Kisążkę</a>
+</div>
+<link rel="stylesheet" href="book.component.css">
+<h2>Lista Książek</h2>
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let book of books$ | async; let i = index">
+      <div class="col-4">
+        <app-deletebook [value]="book.bookUuid"></app-deletebook>
+        <a [routerLink]="['/updatebook', book.bookUuid]" class="btn btn-primary">Edytuj</a>
+
+        <div class="card" [routerLink]="['/book', book.bookUuid]" style="width: 18rem; background-color: #DAFDBA; margin-bottom: 20px;">
+          <div class="card-image">
+            <img [src]="book.imageUrl"  alt="Book Image" width = "150px" height="450px" class="card-img-top">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <p class="card-text">Rating: {{ book.rating }}/100 </p>
+            <p class="card-text">{{ book.description }}</p>
+            <a [routerLink]="['/books', book.bookUuid]" class="btn btn-primary">Więcej</a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

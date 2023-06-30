@@ -1,0 +1,23 @@
+<div *ngIf="book" class="card" style = "background-color: #6e757a;">
+  <div class="row">
+    <div class="col-md-4">
+      <img [src]="book.imageUrl" class="card-img-top" alt="Book Cover">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <app-deletebook [value]="book.bookUuid"></app-deletebook>
+        <a [routerLink]="['/updatebook', book.bookUuid]" class="btn btn-primary">Edytuj</a>
+
+        <h5 class="card-title">{{ book.title }}</h5>
+        <p class="card-text">Total Pages: {{ book.totalPages }}</p>
+        <p class="card-text">Rating: {{ book.rating }}</p>
+        <p class="card-text">ISBN: {{ book.isbn }}</p>
+        <p class="card-text">Published Date: {{ book.publishedDate }}</p>
+        <p class="card-text">Description: {{ book.description }}</p>
+        <a [routerLink]="['/books']" class="btn btn-primary">Powrót</a>
+        <app-add-to-shelf [value]="book.bookUuid"></app-add-to-shelf>
+      </div>
+    </div>
+  </div>
+</div>
+

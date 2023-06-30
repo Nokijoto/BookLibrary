@@ -1,0 +1,17 @@
+<div>
+  <label for="shelf">Shelf:</label>
+  <select id="shelf" name="shelf" [(ngModel)]="selectedShelf">
+    <option value="">Select a shelf</option>
+    <option *ngFor="let shelf of shelfs$ | async; let i = index" [value]="shelf.shelfUuid">{{ shelf.shelfName }}</option>
+  </select>
+  <button (click)="confirmAddBook()">Add to Shelf</button>
+</div>
+<div class="popup-container" *ngIf="showConfirmation">
+  <div class="popup-content">
+    <div class="popup-message">Czy dodać książkę na półkę ?</div>
+    <div class="popup-buttons">
+      <button class="confirm-button" (click)="addBookToShelf()">Yes</button>
+      <button class="cancel-button" (click)="cancelAddBook()">Cancel</button>
+    </div>
+  </div>
+</div>
