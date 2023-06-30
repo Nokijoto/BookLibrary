@@ -1,9 +1,9 @@
 #
 [![wakatime](https://wakatime.com/badge/user/928d8e72-2751-489c-8fd4-04b452024ef1/project/e76e05ac-30a0-4c47-999c-29c9119c215f.svg)](https://wakatime.com/badge/user/928d8e72-2751-489c-8fd4-04b452024ef1/project/e76e05ac-30a0-4c47-999c-29c9119c215f)
 #
-1.	Opis wybranego tematu, funkcjonalności systemu.
+## 1.	Opis wybranego tematu, funkcjonalności systemu.
 Aplikacja webowa umożliwiająca tworzenie własnych półek w celu dodania książek. Również umożliwia przeglądanie listy książek oraz listy autorów oraz przeglądanie informacji o nich.       
-2.	Opis wybranego stosu technologicznego
+## 2.	Opis wybranego stosu technologicznego
 
 •	C#: Jest to język programowania ogólnego przeznaczenia, rozwijany przez firmę Micro-soft. C# jest często wykorzystywany do tworzenia aplikacji dla platformy .NET.
 
@@ -39,7 +39,7 @@ Aplikacja webowa umożliwiająca tworzenie własnych półek w celu dodania ksi�
 
 •	EntityFrameworkCore.Relational: część Entity Framework Core, która zapewnia na-rzędzia i funkcje dla baz danych
 
-3.	Opis jak uruchomić aplikację 
+## 3.	Opis jak uruchomić aplikację 
 Aby uruchomić projekt należy wykonać następujące kroki:
 1.	Zainstalować wymagane oprogramowanie:
 a.	Visual Studio
@@ -48,7 +48,6 @@ c.	Node.js
 d.	Angular cli
 2.	Należy zaktualizować plik appsettings.json w którym znajduję się connection string do bazy danych MariaDb utworzonej na allwaysdata.com.
 3.	Należy uruchomić projekt klikając kompilacje.
- 
 4.	Zostanie uruchomiony backend z proxy które będzie oczekiwało na włączenie frontendu który uruchomi się po chwili.
 5.	Aplikacja jest gotowa do działania.
  
